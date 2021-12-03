@@ -27,7 +27,6 @@ o2 = int(''.join(df_o2.values.astype(str).tolist()[0]),2)
 for column in columns:
     if len(df_co2) < 2:
         break
-
     mode_co2 =  df_co2.mode().min()
     thing = 1 if mode_co2[column] == 0 else 0
     df_co2 = df_co2[df_co2[column] == thing]
