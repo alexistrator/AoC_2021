@@ -20,21 +20,15 @@ for column in columns:
         break
     mode_o2 = df_o2.mode().max()
     df_o2 = df_o2[df_o2[column] == int(mode_o2[column])]
-    print(len(df_o2))
 o2 = int(''.join(df_o2.values.astype(str).tolist()[0]),2)
 
  
 for column in columns:
+    mode_co2 =  df_co2.mode().max().astype(int)
+    thing = 1 if int(mode_co2[column]) == 0 else 0
+    df_co2 = df_co2[df_co2[column] == thing]
     if len(df_co2) < 2:
         break
-    mode_co2 =  df_co2.mode().min()
-    thing = 1 if mode_co2[column] == 0 else 0
-    df_co2 = df_co2[df_co2[column] == thing]
-    print(len(df_co2))
 co2 = int(''.join(df_co2.values.astype(str).tolist()[0]), 2)
 
-print(df_o2)
-print(df_co2)
-print('o2: ' + str(o2))
-print('co2: ' + str(co2))
-print(o2*co2)
+print('result part 2: ' + str(o2*co2))
