@@ -21,8 +21,7 @@ def growing_population(periods:int):
     return population_over_time
 
 # part 2
-# i can't calc an array that long, probs need a formula
-# i can predict the reproduction rate for every single fish. Would it help?
+# thx benny
 
 def growing_population_big(periods:int):
     population = [values.count(i) for i in range(9)]
